@@ -12,25 +12,29 @@ public class Varav {
         double vaartus = x*y;
         return vaartus;
     }
-    public String kasPunkt (LiikuvObjekt obj) {
-        Vektor palliAsukoht = obj.asukoht;
+    public double kasPunkt (Pall obj) {
+        Vektor palliAsukoht = obj.lobj.asukoht;
         Vektor varavaAsukoht = this.sobj.asukoht;
         double dx = varavaAsukoht.x - palliAsukoht.x;
         double dy = varavaAsukoht.y - palliAsukoht.y;
-        String tulemus = "";
         if(Math.abs(dx) <= 3 && Math.abs(dy) <= 3) {
-             tulemus = "Lisandus üks punkt";
+             System.out.println("Lisandus üks punkt");
              skoor += 1;
         } else {
-             tulemus = "Pall ei ole väravas, seega punkti ei tule";
+            System.out.println("Pall ei ole väravas, punkti ei tule!");
         }
-        return tulemus;
+        System.out.println("Skoor: "+skoor);
+        return skoor;
+    }
+
+    public String toString() {
+        return "Värav "+sobj;
     }
 
     //Pooleli
-    public double kysiSkoori(double skoor) {
-        String score = System.out.println("Skoor: "+skoor);
-        return score;
-    }
+    // public double kysiSkoori(double skoor) {
+    //     String score = System.out.println("Skoor: "+skoor);
+    //     return score;
+    // }
 }
    
